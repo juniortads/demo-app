@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/juniortads/demo-app#readme",
   "dependencies": {
-    "apollo-server": "^2.3.1"
+    "apollo-server": "^2.3.1",
+    "react-apollo": "^2.3.3"
   }
 }
