@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/juniortads/demo-app/issues"
   },
-  "homepage": "https://github.com/juniortads/demo-app#readme"
+  "homepage": "https://github.com/juniortads/demo-app#readme",
+  "dependencies": {
+    "apollo-server": "^2.3.1"
+  }
 }
