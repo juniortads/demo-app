@@ -1,5 +1,5 @@
 FROM node:10-alpine
-WORKDIR /app
+WORKDIR /graphql
 EXPOSE 4000
 COPY package.json ../
 RUN npm install && npm cache clean --force
