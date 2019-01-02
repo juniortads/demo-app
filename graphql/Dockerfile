@@ -1,8 +1,8 @@
 FROM node:10-alpine
 WORKDIR /app
 EXPOSE 4000
-COPY package.json ./
+COPY package.json package-lock.json ./
 RUN npm install && npm cache clean --force
-COPY src/ ./src/
+COPY src/graphql ./src/graphql
 USER 1000 
 CMD ["npm", "start"]
