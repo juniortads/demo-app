@@ -1,4 +1,5 @@
 const { ApolloServer, gql } = require('apollo-server');
+const typeDefs = require('./schema');
 
 const books = [
   {
@@ -13,25 +14,20 @@ const books = [
   },
 ];
 
-const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
-    age: Int
-  }
-  type Query {
-    books: [Book]
-  }
-`;
-
 const resolvers = {
   Query: {
     books: () => books,
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ 
+  typeDefs, 
+  resolvers,
+  engine: {
+    apiKey: process.env.ENGINE_API_KEY
+  } 
+});
 
-server.listen().then(({ url }) => {
-  console.log(`🚀  Server ready at ${url}`);
+server.listen().then(({ url }) => { 
+  console.log(`🚀  Server ready at ${url}`); 
 });
