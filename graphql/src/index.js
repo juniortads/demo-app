@@ -1,4 +1,4 @@
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer } = require('apollo-server');
 const typeDefs = require('./schema');
 
 const books = [
@@ -29,5 +29,5 @@ const server = new ApolloServer({
 });
 
 server.listen().then(({ url }) => { 
-  console.log(`🚀  Server ready at ${url}`); 
+  console.log(`🚀  Server ready at ${url} ${process.env.ENGINE_API_KEY} `); 
 });
